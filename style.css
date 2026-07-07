@@ -56,10 +56,10 @@ nav {
 }
 .nav-inner {
   max-width: 900px; margin: 0 auto;
-  padding: 0 24px;
-  height: 60px;
+  padding: 0 20px;
+  height: 56px;
   display: flex; align-items: center; justify-content: space-between;
-  gap: 16px;
+  gap: 12px;
 }
 .nav-logo {
   display: flex; align-items: center; gap: 10px;
@@ -72,17 +72,27 @@ nav {
   display: flex; align-items: center; justify-content: center;
   font-size: 18px; flex-shrink: 0;
 }
-.nav-links {
-  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+
+/* ── Page quick-nav bar (below hero) ──────────────────────────────── */
+/* Replaces the old nav-links that cluttered the sticky header on mobile */
+.page-nav-bar {
+  display: flex; align-items: center; gap: 8px;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  padding: 10px 20px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  scrollbar-width: none;
 }
-.nav-links a {
-  padding: 5px 12px; border-radius: 20px;
-  font-size: 0.78rem; font-weight: 600;
+.page-nav-bar::-webkit-scrollbar { display: none; }
+.page-nav-bar a {
+  flex-shrink: 0;
+  padding: 6px 14px; border-radius: 20px;
+  font-size: 0.78rem; font-weight: 600; white-space: nowrap;
   color: var(--text-muted); text-decoration: none;
   background: var(--pill-bg); transition: all 0.2s;
 }
-.nav-links a:hover, .nav-links a.active {
-  background: var(--accent); color: #fff;
+.page-nav-bar a:hover, .page-nav-bar a.active {
+  background: var(--accent); color: #fff; text-decoration: none;
 }
 
 /* ── Theme toggle ─────────────────────────────────────────────────── */

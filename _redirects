@@ -1,4 +1,9 @@
-/privacy   /privacy.html   200
-/terms     /terms.html     200
-/dmca      /dmca.html      200
-/support   /support.html   200
+# Cloudflare Pages handles .html → clean-URL automatically via "Pretty URLs".
+# These serve the files without triggering HTTP redirects (status 200 = rewrite).
+# Do NOT use 301/302 here — that causes ERR_TOO_MANY_REDIRECTS when combined
+# with Pages' built-in pretty-URL redirect for /page.html → /page.
+/              /index.html    200
+/privacy       /privacy.html  200
+/terms         /terms.html    200
+/dmca          /dmca.html     200
+/support       /support.html  200
