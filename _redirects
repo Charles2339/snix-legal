@@ -1,9 +1,7 @@
-# Cloudflare Pages handles .html → clean-URL automatically via "Pretty URLs".
-# These serve the files without triggering HTTP redirects (status 200 = rewrite).
-# Do NOT use 301/302 here — that causes ERR_TOO_MANY_REDIRECTS when combined
-# with Pages' built-in pretty-URL redirect for /page.html → /page.
-/              /index.html    200
-/privacy       /privacy.html  200
-/terms         /terms.html    200
-/dmca          /dmca.html     200
-/support       /support.html  200
+# Cloudflare Pages serves clean URLs natively via "Pretty URLs" setting —
+# no explicit rewrite rules needed here. Explicit / → /index.html rewrites
+# caused ERR_TOO_MANY_REDIRECTS when Pages' built-in pretty-URL logic
+# also tried to redirect /index.html → / (infinite loop).
+#
+# Leave this file intentionally minimal. If you ever need true 301/302
+# redirects (e.g. old URL → new URL), add them here.
